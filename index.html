@@ -19,13 +19,16 @@ Mostrar nombre del sobreviviente
 
 <script>
 function obtenerNombre() {
-    fetch("https://dbdgit.rf.gd/nombre.php")
-        .then(response => response.text())
-        .then(nombre => {
-            alert("Sobreviviente: " + nombre);
-        });
+    fetch("https://dbdgit.rf.gd/nombre.php", {
+        mode: "no-cors"
+    })
+    .then(response => response.text())
+    .then(nombre => {
+        alert("Sobreviviente: " + nombre);
+    });
 }
 </script>
 
 </body>
 </html>
+
