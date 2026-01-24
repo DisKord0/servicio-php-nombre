@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dead by Daylight - Servicio PHP</title>
+</head>
+<body>
+
+<h1>Dead by Daylight</h1>
+
+<p>
+Página de ejemplo que consume un servicio web en PHP
+y muestra el nombre del sobreviviente.
+</p>
+
+<button onclick="obtenerNombre()">
+Mostrar nombre del sobreviviente
+</button>
+
+<script>
+function obtenerNombre() {
+    fetch("https://dbdgit.rf.gd/nombre.php")
+        .then(response => response.text())
+        .then(nombre => {
+            alert("Sobreviviente: " + nombre);
+        });
+}
+</script>
+
+</body>
+</html>
