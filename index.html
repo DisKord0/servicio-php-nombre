@@ -9,26 +9,19 @@
 <h1>Dead by Daylight</h1>
 
 <p>
-Página de ejemplo que consume un servicio web en PHP
-y muestra el nombre del sobreviviente.
+Ejemplo de consumo de un servicio web en PHP
+alojado en InfinityFree.
 </p>
 
-<button onclick="obtenerNombre()">
+<button onclick="mostrarNombre()">
 Mostrar nombre del sobreviviente
 </button>
 
 <script>
-function obtenerNombre() {
-    fetch("https://dbdgit.rf.gd/nombre.php", {
-        mode: "no-cors"
-    })
-    .then(response => response.text())
-    .then(nombre => {
-        alert("Sobreviviente: " + nombre);
-    });
+function mostrarNombre() {
+    window.open("https://dbdgit.rf.gd/nombre.php", "_blank");
 }
 </script>
 
 </body>
 </html>
-
