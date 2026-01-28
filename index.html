@@ -18,12 +18,20 @@ Mostrar nombre del sobreviviente
 </button>
 
 <script>
-function mostrarNombre() {
-    window.open(
-        "https://dbdgit.rf.gd/nombre.php",
-        "_blank",
-        "width=400,height=200"
-    );
+async function mostrarNombre() {
+    try {
+        const respuesta = await fetch("https://dbdgit.rf.gd/nombre.php");
+
+        if (respuesta.ok) {
+            const texto = await respuesta.text();
+            alert("Sobreviviente: " + texto);
+        } else {
+            throw new Error(respuesta.statusText);
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Error en la conexión");
+    }
 }
 </script>
 
