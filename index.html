@@ -20,7 +20,7 @@ Mostrar nombre del sobreviviente
 <script>
 async function mostrarNombre() {
     try {
-        const respuesta = await fetch("https://dbdgit.rf.gd/htocs/nombre.php");
+        const respuesta = await fetch("https://dbdgit.rf.gd/nombre.php");
 
         if (respuesta.ok) {
             const texto = await respuesta.text();
@@ -37,6 +37,7 @@ async function mostrarNombre() {
 
 </body>
 </html>
+
 
 
 
