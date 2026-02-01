@@ -2,42 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dead by Daylight - Servicio PHP</title>
+    <title>Servicio PHP</title>
 </head>
 <body>
 
-<h1>Dead by Daylight</h1>
-
-<p>
-Página sencilla que consume un servicio web en PHP
-y muestra el nombre del sobreviviente.
-</p>
+<h1>Servicio PHP</h1>
 
 <button onclick="mostrarNombre()">
-Mostrar nombre del sobreviviente
+Mostrar nombre
 </button>
 
 <script>
 async function mostrarNombre() {
-    try {
-        const respuesta = await fetch("https://dbdgit.rf.gd/nombre.php");
 
-        if (respuesta.ok) {
-            const texto = await respuesta.text();
-            alert("Sobreviviente: " + texto);
-        } else {
-            throw new Error(respuesta.statusText);
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Error en la conexión");
-    }
+    const respuesta = await fetch("nombre.php");
+    const nombre = await respuesta.text();
+
+    alert(nombre);
+
 }
 </script>
 
 </body>
 </html>
-
-
-
-
