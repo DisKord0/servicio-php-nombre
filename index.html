@@ -1,27 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Servicio PHP</title>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
+
+ <title>Servicio Dead by Daylight</title>
+
 </head>
+
 <body>
 
-<h1>Servicio PHP</h1>
+ <h1>Servicio Dead by Daylight</h1>
 
-<button onclick="mostrarNombre()">
-Mostrar nombre
-</button>
+ <p>
+  Presiona el botón para revelar el nombre del sobreviviente
+  solicitado al servicio PHP.
+ </p>
 
-<script>
-async function mostrarNombre() {
+ <button onclick="ejecuta()">
+  Revelar nombre
+ </button>
 
-    const respuesta = await fetch("nombre.php");
-    const nombre = await respuesta.text();
+ <script>
 
-    alert(nombre);
+  async function ejecuta() {
+   try {
 
-}
-</script>
+    const respuesta =
+     await fetch("nombre.php")
+
+    if (respuesta.ok) {
+
+     const texto =
+      await respuesta.text()
+
+     alert("El sobreviviente es: " + texto)
+
+    } else {
+
+     throw new Error(
+      respuesta.statusText)
+
+    }
+
+   } catch (error) {
+
+    console.error(error)
+    alert("Error al conectar con el servicio")
+
+   }
+  }
+
+ </script>
 
 </body>
+
 </html>
